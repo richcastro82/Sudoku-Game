@@ -16,6 +16,11 @@ width=600
 height=600
 size=(width, height)
 
+# Grid settings
+Black=(0,0,0)
+White=(255,255,255)
+Grey=(100,100,100)
+
 # Initialize the game
 pygame.init()
 screen=pygame.display.set_mode(size)
