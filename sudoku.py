@@ -9,26 +9,34 @@
 # to the conway game.
 
 # Import libraries
-import pygame
-
+import pygame, sys
 # Screen settings
-width=600
-height=600
-size=(width, height)
+size=(600,600)
+margin=1
+grid_bg=(239,239,239)
+grid_lines=(100,100,100)
+grid_borders=(0,0,0)
+clock=pygame.time.Clock()
+fps=15
 
-# Grid settings
-Black=(0,0,0)
-White=(255,255,255)
-Grey=(100,100,100)
-
+gridW=10
+gridH=10
+gridBox=(gridW,gridH)
 # Initialize the game
 pygame.init()
 screen=pygame.display.set_mode(size)
 pygame.display.set_caption('Richard Castro - Sudoku Game')
 
 while True: #main game loop
+    clock.tick(fps)
+    screen.fill(grid_bg)
+
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             pygame.quit()
             sys.exit()
+
+    pygame.draw.rect(screen, grid_lines, (1,1,25,25))
+
+
     pygame.display.update()

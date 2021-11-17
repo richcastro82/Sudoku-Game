@@ -6,4 +6,5 @@ import pygame
 
 
 class Board:
-    def __init__(width, height):
+    def __init__(self, width, height, margin, size):
+        
