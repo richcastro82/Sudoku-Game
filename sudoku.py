@@ -9,19 +9,23 @@
 # to the conway game.
 
 # Import libraries
-import pygame, sys
+import pygame, os
+
 # Screen settings
-size=(600,600)
+height=600
+width=600
 margin=1
 grid_bg=(239,239,239)
 grid_lines=(100,100,100)
 grid_borders=(0,0,0)
-clock=pygame.time.Clock()
 fps=15
+sections=9
 
-gridW=10
-gridH=10
-gridBox=(gridW,gridH)
+
+clock=pygame.time.Clock()
+gridBox=width/sections
+size=(width, height)
+
 # Initialize the game
 pygame.init()
 screen=pygame.display.set_mode(size)
@@ -34,9 +38,11 @@ while True: #main game loop
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             pygame.quit()
-            sys.exit()
+            # sys.exit()
 
-    pygame.draw.rect(screen, grid_lines, (1,1,25,25))
-
+    for x in range(height):
+        for y in range(width):
+            rect=pygame.Rect(x*(gridBox+margin), y*(gridBox+margin), gridBox, gridBox)
+            pygame.draw.rect(screen, grid_lines, rect)
 
     pygame.display.update()
