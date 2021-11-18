@@ -23,16 +23,21 @@ pygame.display.set_caption('Richard Castro - Sudoku Game')
 
 
 def sudoku():
-    while True: #main game loop
+    # Main game loop
+    while True:
         clock.tick(fps)
-        screen.fill(grid_bg)
 
+
+        # Event Handling
         for event in pygame.event.get():
+            # Quit via close button
             if event.type == pygame.QUIT:
                 pygame.quit()
                 sys.exit()
 
-        drawGrid(height, width, margin, gridBox)
+        # drawGrid(height, width, lines, gridBox)
+        screen.fill(wht)
+        drawLine()
 
         pygame.display.update()
 
