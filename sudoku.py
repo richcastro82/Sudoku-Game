@@ -10,39 +10,31 @@
 
 # Import libraries
 import pygame, os
-
-# Screen settings
-height=600
-width=600
-margin=1
-grid_bg=(239,239,239)
-grid_lines=(100,100,100)
-grid_borders=(0,0,0)
-fps=15
-sections=9
-
-
-clock=pygame.time.Clock()
-gridBox=width/sections
-size=(width, height)
-
+from rules import *
+from vars import *
+import sys, os
 # Initialize the game
+clock=pygame.time.Clock()
+
+
 pygame.init()
-screen=pygame.display.set_mode(size)
+
 pygame.display.set_caption('Richard Castro - Sudoku Game')
 
-while True: #main game loop
-    clock.tick(fps)
-    screen.fill(grid_bg)
 
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            pygame.quit()
-            # sys.exit()
+def sudoku():
+    while True: #main game loop
+        clock.tick(fps)
+        screen.fill(grid_bg)
 
-    for x in range(height):
-        for y in range(width):
-            rect=pygame.Rect(x*(gridBox+margin), y*(gridBox+margin), gridBox, gridBox)
-            pygame.draw.rect(screen, grid_lines, rect)
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                sys.exit()
 
-    pygame.display.update()
+        drawGrid(height, width, margin, gridBox)
+
+        pygame.display.update()
+
+if __name__ == '__main__':
+    sudoku()
