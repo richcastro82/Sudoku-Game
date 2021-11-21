@@ -1,4 +1,4 @@
-![Sudoku](https://kingcastro.com/sudokugame_github.jpg)
+![Sudoku](https://kingcastro.com/SudokuGame_github.jpg)
 
 
 # Sudoku-Game---Python
