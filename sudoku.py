@@ -26,20 +26,17 @@ def sudoku():
     # Main game loop
     while True:
         clock.tick(fps)
-
-
+        screen.fill(peach)
+        drawLine()
+        pygame.display.update()
         # Event Handling
         for event in pygame.event.get():
             # Quit via close button
             if event.type == pygame.QUIT:
-                pygame.quit()
-                sys.exit()
+                game_over()
 
         # drawGrid(height, width, lines, gridBox)
-        screen.fill(wht)
-        drawLine()
 
-        pygame.display.update()
 
 if __name__ == '__main__':
     sudoku()
