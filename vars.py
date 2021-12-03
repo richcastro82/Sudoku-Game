@@ -1,7 +1,7 @@
 # Screen settings
 import pygame
-height=600
-width=600
+height=597
+width=597
 lines=1
 blk=(0,0,0)
 wht=(255,255,255)
