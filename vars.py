@@ -1,12 +1,12 @@
 # Screen settings
 import pygame
-height=597
-width=597
+height=596
+width=596
 lines=1
 blk=(0,0,0)
 wht=(255,255,255)
-peach=(150,150,20)
-reddish=(200,20,20)
+peach=(241,231,222)
+reddish=(217,23,108)
 grid_borders=(100,100,100)
 fps=15
 sections=9

@@ -2,12 +2,48 @@
 # November 2021
 # Rules file for the Sudoku game
 
-import pygame
+import pygame,sys
 from vars import *
 #
-# class Board:
-#     def __init__(self, width, height, lines, size):
-#
+
+class Button:
+    def __init(self, x, y, w, h, text=""):
+        pass
+
+    def DrawButton(self):
+        pass
+
+class Board:
+    def __init__(self, width, height, lines, size):
+        self.width=width
+        self.height=height
+        self.lines=lines
+        self.size=size
+
+    def StartMenu(self):
+        # pass
+        bg=pygame.image.load('bg.png')
+        run_game=False
+        while run_game==False:
+
+            screen.blit(bg, (0,0))
+            # clock.tick(fps)
+            pygame.display.update()
+            for event in pygame.event.get():
+                if event.type==pygame.QUIT:
+                    run_game=True
+
+    def QuitGame(self):
+        pygame.quit()
+        sys.exit()
+
+    def GridLines(self):
+        for x in range(0,self.width,self.size):
+            for y in range(0,self.height,self.size):
+                pygame.draw.line(screen, reddish, [x,y],[x, y+self.width],2)
+                pygame.draw.line(screen, reddish, [x, y], [x+self.height, y], 2)
+
+
 
 # def drawGrid(width, height, lines, gridBox):
 #     for x in range(height):
@@ -15,18 +51,19 @@ from vars import *
 #             rect=pygame.Rect(x*(gridBox+lines), y*(gridBox+lines), gridBox, gridBox)
 #             pygame.draw.rect(screen, lines, rect)
 
+#
+# def home_screen():
+#     pass
 
-def home_screen():
-    pass
-
-def game_over():
-    pygame.quit()
-
-def drawLine():
-    for x in range (0, 600, 66 ):
-        for y in range(0,600,66):
-            pygame.draw.line(screen, reddish, [x,y],[x,y+width], 4)
-            pygame.draw.line(screen, reddish, [x,y],[x+height,y], 4)
+# def game_over():
+#     pygame.quit()
+#     sys.exit()
+# #
+# def drawLine():
+#     for x in range (0, 600, 66 ):
+#         for y in range(0,600,66):
+#             pygame.draw.line(screen, reddish, [x,y],[x,y+width], 4)
+#             pygame.draw.line(screen, reddish, [x,y],[x+height,y], 4)
     # Need to loop this code
     # pygame.draw.line(screen, reddish, [x, y], [x,y+600], 4)
     # pygame.draw.line(screen, reddish, [x+gridBox, y], [x+gridBox,y+600], 4)

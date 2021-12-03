@@ -9,10 +9,10 @@
 # to the conway game.
 
 # Import libraries
-import pygame, os
+import pygame, os, sys
 from rules import *
 from vars import *
-import sys, os
+
 # Initialize the game
 clock=pygame.time.Clock()
 
@@ -23,17 +23,22 @@ pygame.display.set_caption('Richard Castro - Sudoku Game')
 
 
 def sudoku():
+    RUNTIME=Board(width, height,sqaure,66)
+    RUNTIME.StartMenu()
     # Main game loop
     while True:
-        clock.tick(fps)
         screen.fill(peach)
-        drawLine()
+
+        RUNTIME.GridLines()
+        clock.tick(fps)
+
+        # drawLine()
         pygame.display.update()
         # Event Handling
         for event in pygame.event.get():
             # Quit via close button
             if event.type == pygame.QUIT:
-                game_over()
+                RUNTIME.QuitGame()
 
         # drawGrid(height, width, lines, gridBox)
 
